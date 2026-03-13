@@ -7,15 +7,34 @@ from drf_yasg import openapi
 from rest_framework import permissions
 
 # Home route with actual demo credentials
+# config/urls.py or tasks/views.py
+from django.http import HttpResponse
+
 def home(request):
-    return JsonResponse({
-        "message": "Welcome to Task Manager API",
-        "swagger_docs": "https://task-manager-api-x87n.onrender.com/swagger/",
-        "demo_credentials": {
-            "username": "susanacharya",
-            "password": "123"
-        }
-    })
+    html_content = """
+    <html>
+        <head>
+            <title>Task Manager API</title>
+            <style>
+                body { font-family: Arial, sans-serif; background: #f7f7f7; text-align: center; padding: 50px; }
+                h1 { color: #333; }
+                a { display: inline-block; margin: 10px; padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
+                a:hover { background: #45a049; }
+                .credentials { margin-top: 20px; font-size: 16px; color: #555; }
+            </style>
+        </head>
+        <body>
+            <h1>Welcome to Task Manager API</h1>
+            <a href="https://task-manager-api-x87n.onrender.com/swagger/" target="_blank">Open Swagger Docs</a>
+            <div class="credentials">
+                <p><strong>Demo Credentials:</strong></p>
+                <p>Username: susanacharya</p>
+                <p>Password: 123</p>
+            </div>
+        </body>
+    </html>
+    """
+    return HttpResponse(html_content)
 
 # Swagger schema setup
 schema_view = get_schema_view(
