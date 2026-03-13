@@ -37,7 +37,7 @@ def home(request):
             <h1>Welcome to Task Manager API</h1>
             <a class="button" href="https://task-manager-api-x87n.onrender.com/swagger/" target="_blank">Open Swagger Docs</a>
             <a class="button" href="https://task-manager-api-x87n.onrender.com/redoc/" target="_blank">Open ReDoc Docs</a>
-            <a class="button" href="https://github.com/yourusername/task-manager-api" target="_blank">View GitHub Repo</a>
+            <a class="button" href="https://github.com/susanacharya12/task-manager-api.git" target="_blank">View GitHub Repo</a>
 
             <div class="credentials">
                 <p><strong>Demo Credentials:</strong></p>
